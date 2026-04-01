@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Dental Clinic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .slogan {
+            font-style: italic;
+            font-size: 14px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background-color: #1e3a8a;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            transition: background-color 0.3s;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        nav a:last-child {
+            border-right: none;
+        }
+        
+        nav a:hover {
+            background-color: #3b82f6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .contact-info {
+            background-color: #f0f4ff;
+            padding: 20px;
+            border-left: 4px solid #3b82f6;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+        }
+        
+        .contact-info a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+        
+        .btn-phone {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .btn-google {
+            background-color: #EA4335;
+            color: white;
+        }
+        
+        .instagram-feed {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .instagram-feed h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        
+        .instagram-embed {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .map-container {
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        .reviews-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #EA4335;
+        }
+        
+        .reviews-section h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .stars {
+            color: #FDB022;
+            font-size: 18px;
+            margin: 10px 0;
+            letter-spacing: 2px;
+        }
+        
+        .review-text {
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav a {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+            
+            nav a:last-child {
+                border-bottom: none;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🦷 Sunrise Dental Clinic</div>
+    <div class="slogan">Bringing British Dental Standards to Egypt, with affordable care for the whole family</div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#help">Help Center</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>Thank you for visiting the official website for Sunrise Dental Clinic.</p>
+        <p>Our clinic was founded in 2019 by Dr. Shehab AlaaElDin with our main branch in Tagamoa (5th settlement), New Cairo. We provide all kinds of dental treatments for the whole family at affordable prices.</p>
+        <p>All our team have completed or are doing post-graduate UK-based specialist training from the Royal College of Surgeons of England or Edinburgh. We proudly bring British standards of dentistry to Egypt.</p>
+    </div>
+
+    <div class="contact-info">
+        <h3 style="color: #1e3a8a; margin-bottom: 15px;">Get In Touch</h3>
+        <p><strong>📞 Phone:</strong> <a href="tel:+201090004608">+20 109 000 4608</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:sunrisedental.eg@gmail.com">sunrisedental.eg@gmail.com</a></p>
+        <p><strong>📍 Location:</strong> Tagamoa (5th Settlement), New Cairo</p>
+        
+        <div class="buttons">
+            <a href="https://wa.me/201090004608" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+            <a href="tel:+201090004608" class="btn btn-phone">📞 Call Us</a>
+            <a href="https://instagram.com/sunrisedental.eg" class="btn btn-instagram" target="_blank">📸 Follow on Instagram</a>
+            <a href="https://maps.app.goo.gl/HRvV7Mz8JgwhkycQ9" class="btn btn-google" target="_blank">⭐ Google Reviews</a>
+        </div>
+    </div>
+
+    <div class="section" id="services">
+        <h2>Services</h2>
+        <p>At Sunrise Dental Clinic, we offer a comprehensive range of dental treatments for the entire family, including:</p>
+        <ul style="margin-left: 20px; color: #555;">
+            <li>General Dentistry & Check-ups</li>
+            <li>Cosmetic Dentistry</li>
+            <li>Dental Implants</li>
+            <li>Orthodontics (Braces)</li>
+            <li>Root Canal Treatment</li>
+            <li>Teeth Whitening</li>
+            <li>Pediatric Dentistry (Children's Dental Care)</li>
+            <li>And more...</li>
+        </ul>
+        <p style="margin-top: 15px;">All treatments are performed to British standards with the latest technology and techniques.</p>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.8923456789!2d31.7!3d29.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145838f5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sTagamoa%205th%20Settlement%2C%20New%20Cairo!5e0!3m2!1sen!2seg!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="reviews-section">
+        <h3>⭐ Google Reviews</h3>
+        <div class="stars">★★★★★</div>
+        <div class="review-text">
+            <p><strong>Highly Rated by Our Patients</strong></p>
+            <p>Our patients consistently give us 5-star reviews on Google! We're proud to provide British-standard dental care at affordable prices. Click the button below to read reviews from our happy patients and leave your own!</p>
+        </div>
+        <a href="https://maps.app.goo.gl/HRvV7Mz8JgwhkycQ9" target="_blank" class="btn btn-google">📍 View All Reviews on Google Maps</a>
+    </div>
+
+    <div class="instagram-feed">
+        <h3>Follow Us on Instagram</h3>
+        <div class="instagram-embed">
+            <iframe src="https://www.instagram.com/sunrisedental.eg/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+    </div>
+
+    <div class="section" id="help">
+        <h2>Help Center</h2>
+        <p>Have questions? We're here to help!</p>
+        <p><strong>For appointment bookings:</strong> Call us at <a href="tel:+201090004608" style="color: #1e3a8a; font-weight: bold;">+20 109 000 4608</a> or message us on <a href="https://wa.me/201090004608" style="color: #1e3a8a; font-weight: bold;">WhatsApp</a></p>
+        <p><strong>For general inquiries:</strong> Email us at <a href="mailto:sunrisedental.eg@gmail.com" style="color: #1e3a8a; font-weight: bold;">sunrisedental.eg@gmail.com</a></p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Sunrise Dental Clinic. All rights reserved. | Tagamoa (5th Settlement), New Cairo</p>
+    <p>Bringing British Dental Standards to Egypt with affordable care for the whole family.</p>
+</footer>
+
+</body>
+</html>
